@@ -26,7 +26,7 @@ docker run --name nginxplus -p 80:80 -e AUTHZ_SERVER='https://ice.oktapreview.co
 ## Specs
 
 - The container runs Nginx Plus and PHP FastCGI Process Manager (fpm).
-- Container runs as https://localhost.
+- Container runs as http://localhost.
 - You must obtain your token in an external app.
 - The HTTP server contains a phpinfo.php file that shows your HEADERS.
 - You can always work on your Docker/PHP/NGINX-fu to customize the default behavior.
@@ -35,12 +35,12 @@ docker run --name nginxplus -p 80:80 -e AUTHZ_SERVER='https://ice.oktapreview.co
 
 ### Without JWT:
 
-1. Go to https://localhost/phpinfo.php
+1. Go to http://localhost/phpinfo.php
 2. Check your results (you should get an 403 - Unauthorized)
 
 ### With JWT:
 
-1. Go to https://localhost/phpinfo.php
+1. Go to http://localhost/phpinfo.php
 2. Check your results (you'll get a 200 and the headers will display info about your JWT token and claims)
 
 ## Support
