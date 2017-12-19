@@ -5,6 +5,19 @@
 
 This is a sample docker container used to test JWT with NGINX Plus.
 
+## How to use (TL;DR)
+
+```
+git clone https://github.com/fhakamine/nginxplus-php-jwt.git
+cd nginxplus-php-jwt
+# To get the nginx-repo.* files, sign up for a NGINX Plus trial
+cp nginx-repo.crt license
+cp nginx-repo.key license
+docker build -t nginx_plus .
+# Sign-up for a Free Okta Developer account (https://developer.okta.com). Get an Authz Server and register an admin scope (i.e. php:admin)
+docker run --name nginxplus -p 80:80 -e ADMIN_SCOPE='php:admin' -e AUTHZ_SERVER='https://ice.oktapreview.com/oauth2/123123123' nginx_plus
+```
+
 ## How to use
 
 1. Clone this repo or download its contents.
