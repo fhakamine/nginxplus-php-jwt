@@ -48,6 +48,9 @@ COPY conf/default.conf /etc/nginx/conf.d/default.conf
 COPY run.sh run.sh
 RUN chmod +x run.sh
 
+# SET DEFAULT VARIABLES
+ENV ADMIN_SCOPE='admin:php'
+
 EXPOSE 80
 
 STOPSIGNAL SIGTERM

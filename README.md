@@ -11,10 +11,10 @@ This is a sample docker container used to test JWT with NGINX Plus.
 2. Register for an NGINX Plus (Trial or buy): https://www.nginx.com
 3. Save the NGINX license (key and crt) under the license folder
 4. Build your docker container: `docker build -t nginx_plus .`
-5. Configure your Okta Tenant.
+5. Configure your Okta Tenant (get an ADMIN_SCOPE and an AUTHZ_SERVER url).
 6. Run your container:
 ```
-docker run --name nginxplus -p 80:80 -e AUTHZ_SERVER='https://ice.oktapreview.com/oauth2/123123123' nginx_plus
+docker run --name nginxplus -p 80:80 -e ADMIN_SCOPE='php:admin' -e AUTHZ_SERVER='https://ice.oktapreview.com/oauth2/123123123' nginx_plus
 ```
 
 *IMPORTANT: Be careful when managing your nginxplus keys! Your don't want to accidentally make them public*

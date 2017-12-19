@@ -3,6 +3,9 @@
 # Download the JWT signing key and setup rotation
 wget ${AUTHZ_SERVER}/v1/keys -O /etc/nginx/keys.jwk
 
+# SED will replace the admin scope configuration correctly
+sed -ie 's/ADMIN_SCOPE/'"$ADMIN_SCOPE"'/g' /etc/nginx/conf.d/default.conf
+
 # Start php-fpm
 service php7.0-fpm start
 status=$?
